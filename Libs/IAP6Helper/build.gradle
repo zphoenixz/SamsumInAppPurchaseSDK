@@ -23,33 +23,17 @@ android {
 dependencies {
 }
 
-//task createJar(type: Jar) {
-//    from zipTree(file("${buildDir}/outputs/aar/${project.name}-release.aar"))
-//    archiveClassifier.set('classes')
-//}
-//
-//artifacts {
-//    archives createJar
-//}
-
 publishing {
     publications {
         maven(MavenPublication) {
-            // Group and version identifiers
             groupId 'com.samsung.android.sdk.iap'
-            artifactId 'samsung_iap'
-            version '1.1.1'
-
-            // Add the release AAR as an artifact
+            artifactId 'genopets'
+            version '1.0.0'
             artifact("$buildDir/outputs/aar/${project.name}-release.aar")
-
-//            // Include the JAR file as well
-//            artifact createJar
-
             pom {
-                name = 'Samsung IAP Helper'
+                name = 'Modified Samsung IAP Helper'
                 description = 'A helper library for Samsung In-App Purchase SDK'
-                url = 'http://your.url.here'
+                url = 'http://genopets.me'
                 licenses {
                     license {
                         name = 'The Apache Software License, Version 2.0'
