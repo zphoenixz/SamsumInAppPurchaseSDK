@@ -6,7 +6,7 @@ android {
     buildToolsVersion '28.0.3'
 
     defaultConfig {
-        minSdkVersion 27
+        minSdkVersion 18
         targetSdkVersion 33
     }
     lintOptions {
@@ -23,14 +23,14 @@ android {
 dependencies {
 }
 
-task createJar(type: Jar) {
-    from zipTree(file("${buildDir}/outputs/aar/${project.name}-release.aar"))
-    archiveClassifier.set('classes')
-}
-
-artifacts {
-    archives createJar
-}
+//task createJar(type: Jar) {
+//    from zipTree(file("${buildDir}/outputs/aar/${project.name}-release.aar"))
+//    archiveClassifier.set('classes')
+//}
+//
+//artifacts {
+//    archives createJar
+//}
 
 publishing {
     publications {
@@ -43,8 +43,8 @@ publishing {
             // Add the release AAR as an artifact
             artifact("$buildDir/outputs/aar/${project.name}-release.aar")
 
-            // Include the JAR file as well
-            artifact createJar
+//            // Include the JAR file as well
+//            artifact createJar
 
             pom {
                 name = 'Samsung IAP Helper'
